@@ -1,6 +1,5 @@
 import app from 'flarum/forum/app';
 import { extend, override } from 'flarum/common/extend';
-import ForumApplication from 'flarum/forum/ForumApplication';
 import HeaderSecondary from 'flarum/forum/components/HeaderSecondary';
 import IndexSidebar from 'flarum/forum/components/IndexSidebar';
 import DiscussionListItem from 'flarum/forum/components/DiscussionListItem';
@@ -24,7 +23,9 @@ app.initializers.add('soup-97-palette-theme', () => {
   // ------------------------------------------------------------------
   // Fixed left sidebar, mounted next to the header drawer.
 
-  extend(ForumApplication.prototype, 'mount', () => {
+  // ForumApplication isn't in the export registry, so patch the running app instance.
+  // Initializers run before boot() calls this.mount(), so the patch is in place in time.
+  extend(app, 'mount', () => {
     if (!sidebarEnabled()) return;
 
     const appEl = document.getElementById('app');
