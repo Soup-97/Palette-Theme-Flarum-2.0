@@ -1,0 +1,23 @@
+.App-header {
+  border-bottom: 1px solid var(--pallet-border);
+
+  .scrolled & {
+    box-shadow: none;
+  }
+}
+
+.SessionDropdown .Button-label {
+  display: none;
+}
+
+// "Start a Discussion" lives in the header on desktop; the index page's own
+// button takes over on smaller screens.
+.Header-secondary .item-newDiscussion {
+  .PalletHeader-newDiscussion {
+    margin: 0 8px;
+  }
+
+  @media @phone, @tablet {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "soup-97/flarum-palette-theme",
+  "description": "Palette theme for Flarum 2.0 (a port of the Pallet theme) — a left sidebar layout with a user card, tag tiles and refined typography.",
+  "keywords": ["flarum", "theme", "pallet", "palette"],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Soup-97",
+      "homepage": "https://github.com/Soup-97"
+    },
+    {
+      "name": "Adrian McCay",
+      "homepage": "https://github.com/MadEyeDeer/flarum-pallet-theme",
+      "role": "Previous maintainer (1.x fork)"
+    },
+    {
+      "name": "Hasan Özbey",
+      "homepage": "https://github.com/the-turk",
+      "role": "Original author"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "flarum/core": "^2.0.0-rc.8",
+    "flarum/tags": "^2.0.0-rc.8"
+  },
+  "minimum-stability": "beta",
+  "prefer-stable": true,
+  "extra": {
+    "flarum-extension": {
+      "title": "Palette Theme",
+      "category": "theme",
+      "icon": {
+        "name": "fas fa-pallet",
+        "backgroundColor": "#b72a2a",
+        "color": "#fff"
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+// ------------------------------------
+// Fixed left sidebar (desktop only)
+
+.PalletSidebar {
+  display: none;
+}
+
+@media @desktop-up {
+  .Pallet--withSidebar {
+    .App-content,
+    .App-footer {
+      margin-left: var(--pallet-sidebar-width);
+    }
+
+    .App-composer {
+      left: var(--pallet-sidebar-width);
+    }
+
+    // The discussion list pane slides out from the sidebar's edge.
+    .DiscussionListPane {
+      margin-left: var(--pallet-sidebar-width);
+    }
+  }
+
+  .PalletSidebar {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: var(--header-height);
+    bottom: 0;
+    width: var(--pallet-sidebar-width);
+    z-index: calc(var(--zindex-header) - 1);
+    background: var(--pallet-sidebar-bg);
+    border-right: 1px solid var(--pallet-border);
+  }
+}
+
+@media @desktop-hd {
+  .Pallet--withSidebar.hasPane.panePinned {
+    .App-content,
+    .App-footer {
+      margin-left: calc(var(--pallet-sidebar-width) + var(--pane-width));
+    }
+  }
+}
+
+.PalletSidebar-container {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+// ------------------------------------
+// User / guest card
+
+.PalletSidebar-user {
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+  margin: 20px 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--pallet-border-strong);
+  text-align: center;
+
+  h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: var(--pallet-font);
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--pallet-heading);
+  }
+
+  p {
+    margin: 0;
+    font-size: .8rem;
+    color: var(--pallet-muted);
+  }
+}
+
+.PalletSidebar-loggedIn {
+  width: 100%;
+}
+
+.PalletSidebar-avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 6px;
+  border: 1px solid var(--pallet-border-strong);
+  border-radius: 50%;
+
+  .Avatar {
+    .Avatar--size(4.5rem);
+  }
+
+  .badges {
+    position: absolute;
+    right: -4px;
+    bottom: -2px;
+    white-space: nowrap;
+
+    .Badge {
+      margin-left: -10px;
+    }
+  }
+}
+
+.PalletSidebar-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0 10px;
+}
+
+.PalletSidebar-stat span {
+  display: block;
+
+  &:first-child {
+    font-size: .65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--pallet-heading);
+  }
+
+  &:last-child {
+    font-size: .8rem;
+    color: var(--pallet-muted);
+  }
+}
+
+.PalletSidebar-guest {
+  width: 100%;
+  text-align: left;
+
+  .PalletSidebar-guestButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .Button {
+    font-weight: 500;
+    color: var(--pallet-heading);
+    background: transparent;
+    border: 1px solid var(--pallet-border-strong);
+    border-radius: 4px;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--pallet-guest-hover);
+    }
+  }
+}
+
+// ------------------------------------
+// Navigation
+
+.PalletSidebar-nav {
+  padding: 20px 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    border-left: 4px solid transparent;
+
+    &.active {
+      border-left-color: var(--pallet-active);
+    }
+
+    &.Dropdown-separator {
+      height: 0;
+      margin: 15px 30px;
+      border-left: 0;
+      border-bottom: 1px solid var(--pallet-border-strong);
+      background: none;
+    }
+
+    > a,
+    > button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 14px 36px;
+      font-family: var(--pallet-font);
+      font-size: .8rem;
+      font-weight: 600;
+      text-align: left;
+      color: var(--pallet-heading);
+      background: none;
+      border: 0;
+      border-radius: 0;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: none;
+        background: var(--control-bg);
+      }
+    }
+
+    .Button-icon,
+    .icon {
+      width: 18px;
+      margin-right: 20px;
+      font-size: 15px;
+      color: var(--pallet-icon);
+      text-align: center;
+    }
+
+    &.active .Button-icon {
+      color: var(--pallet-active);
+    }
+  }
+}

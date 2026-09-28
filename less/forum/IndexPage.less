@@ -1,0 +1,21 @@
+@media @desktop-up {
+  // Outside tag pages the fixed sidebar replaces the in-page side nav.
+  .Page-sidebar:has(> .sideNav--hidden) {
+    display: none;
+  }
+
+  .IndexPage-nav .item-newDiscussion,
+  .IndexPage-nav .item-subscription {
+    display: none;
+  }
+
+  // On tag pages, the in-page nav lists only the current tag's family.
+  .PalletTagNav .Dropdown-menu > li:not([class*="item-tag"]),
+  .PalletTagNav .Dropdown-menu > li.item-tags {
+    display: none;
+  }
+}
+
+.TagHero .icon {
+  display: none;
+}

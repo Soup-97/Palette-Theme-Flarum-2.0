@@ -1,0 +1,22 @@
+{
+  "name": "@soup-97/flarum-palette-theme",
+  "private": true,
+  "version": "2.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "format": "prettier --write src",
+    "format-check": "prettier --check src"
+  },
+  "devDependencies": {
+    "flarum-webpack-config": "^3.0.4",
+    "prettier": "^2.8.8",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "prettier": {
+    "printWidth": 150,
+    "singleQuote": true
+  }
+}

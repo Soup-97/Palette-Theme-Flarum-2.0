@@ -1,0 +1,58 @@
+// Palette design tokens. Flarum 2.0 switches colour schemes at runtime via
+// [data-theme] on <html>, so everything is a CSS custom property.
+
+@pallet-sidebar-width: 280px;
+
+:root {
+  --pallet-sidebar-width:      @pallet-sidebar-width;
+  --pallet-font:               "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+[data-theme^=light] {
+  --pallet-sidebar-bg:         #fafafa;
+  --pallet-border:             #e8e8e8;
+  --pallet-border-strong:      #dedede;
+  --pallet-heading:            #393a4f;
+  --pallet-muted:              #808080;
+  --pallet-icon:               #cecece;
+  --pallet-active:             #3b3f42;
+  --pallet-body-text:          #222;
+  --pallet-read-title:         #646464;
+  --pallet-sticky-bg:          #fef7ec;
+  --pallet-sticky-bg-hover:    #fef5e6;
+  --pallet-quote-bg:           #f7f7f7;
+  --pallet-quote-color:        #767676;
+  --pallet-card-bg:            #fafafa;
+  --pallet-card-shadow:        rgba(46, 53, 57, 0.11);
+  --pallet-guest-hover:        #f0f0f0;
+}
+
+[data-theme^=dark] {
+  --pallet-sidebar-bg:         #1c2330;
+  --pallet-border:             #2a3346;
+  --pallet-border-strong:      #2a3346;
+  --pallet-heading:            #ffffff;
+  --pallet-muted:              #a2a5b9;
+  --pallet-icon:               #5b6478;
+  --pallet-active:             #a2a5b9;
+  --pallet-body-text:          #c3c6d4;
+  --pallet-read-title:         #a2a5b9;
+  --pallet-sticky-bg:          #2c384b;
+  --pallet-sticky-bg-hover:    #252f3f;
+  --pallet-quote-bg:           #232c3c;
+  --pallet-quote-color:        #8a9ab0;
+  --pallet-card-bg:            #1c2330;
+  --pallet-card-shadow:        rgba(0, 0, 0, 0.5);
+  --pallet-guest-hover:        var(--primary-color);
+}
+
+[data-theme=light-hc] {
+  --pallet-muted:              #555;
+  --pallet-read-title:         #444;
+}
+
+[data-theme=dark-hc] {
+  --pallet-muted:              #d0d2dc;
+  --pallet-read-title:         #d0d2dc;
+  --pallet-body-text:          #e6e7ee;
+}

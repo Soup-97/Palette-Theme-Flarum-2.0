@@ -1,0 +1,7 @@
+soup-97-palette-theme:
+  forum:
+    howdy: Howdy, Stranger!
+    involve: It looks like you're new here. If you want to get involved, click one of these buttons!
+  admin:
+    show_side_nav_to_guests_label: Show the side navigation menu to guests
+    show_side_nav_to_guests_help: When disabled, guests see the forum without the left sidebar.

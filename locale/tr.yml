@@ -1,0 +1,7 @@
+soup-97-palette-theme:
+  forum:
+    howdy: Selam, Yabancı!
+    involve: Buralarda yeni gibi görünüyorsun. Aramıza katılmak için aşağıdaki butonlardan birine tıkla!
+  admin:
+    show_side_nav_to_guests_label: Yan gezinme menüsünü ziyaretçilere göster
+    show_side_nav_to_guests_help: Kapalıyken ziyaretçiler forumu sol kenar çubuğu olmadan görür.

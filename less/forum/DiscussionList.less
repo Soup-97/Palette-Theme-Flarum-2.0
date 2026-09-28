@@ -1,0 +1,35 @@
+.DiscussionListItem {
+  border-radius: 0;
+
+  .item-terminalPost {
+    font-size: 12px;
+    color: var(--pallet-muted);
+
+    .username {
+      color: var(--pallet-heading);
+    }
+  }
+}
+
+.DiscussionListItem-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pallet-heading);
+
+  .DiscussionList:not(.DiscussionList--searchResults) .read & {
+    color: var(--pallet-read-title);
+  }
+}
+
+.DiscussionListItem-info .item-excerpt {
+  font-size: .85rem;
+  color: var(--pallet-muted);
+}
+
+.DiscussionListItem--sticky {
+  background: var(--pallet-sticky-bg);
+
+  &:hover {
+    background: var(--pallet-sticky-bg-hover);
+  }
+}
