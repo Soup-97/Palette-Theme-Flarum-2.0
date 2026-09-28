@@ -16,9 +16,10 @@
       left: var(--pallet-sidebar-width);
     }
 
-    // The discussion list pane slides out from the sidebar's edge.
-    .DiscussionListPane {
-      margin-left: var(--pallet-sidebar-width);
+    // The discussion list pane slides out from behind the sidebar and rests
+    // next to it. While hidden it keeps core's off-screen position.
+    &.paneShowing .DiscussionListPane {
+      left: var(--pallet-sidebar-width);
     }
   }
 
@@ -29,7 +30,8 @@
     top: var(--header-height);
     bottom: 0;
     width: var(--pallet-sidebar-width);
-    z-index: calc(var(--zindex-header) - 1);
+    // Above the discussion list pane, below the composer and dropdowns.
+    z-index: calc(var(--zindex-pane) + 1);
     background: var(--pallet-sidebar-bg);
     border-right: 1px solid var(--pallet-border);
   }
@@ -37,6 +39,10 @@
 
 @media @desktop-hd {
   .Pallet--withSidebar.hasPane.panePinned {
+    .DiscussionListPane {
+      left: var(--pallet-sidebar-width);
+    }
+
     .App-content,
     .App-footer {
       margin-left: calc(var(--pallet-sidebar-width) + var(--pane-width));
