@@ -1,6 +1,11 @@
 @media @desktop-up {
-  // Outside tag pages the fixed sidebar replaces the in-page side nav.
-  .Page-sidebar:has(> .sideNav--hidden) {
+  // Outside tag pages the fixed sidebar replaces the in-page side nav. The
+  // column itself only goes away when nothing else (e.g. widgets) lives in it.
+  .sideNav--hidden {
+    display: none;
+  }
+
+  .Page-sidebar:has(> .sideNav--hidden:only-child) {
     display: none;
   }
 
